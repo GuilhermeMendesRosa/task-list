@@ -6,14 +6,17 @@ const List = database.define('list', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
-        primaryKey: true, 
-        unique: true,
-        fields: ['id_list']
+        primaryKey: true
     },
     nome: {
         type: Sequelize.STRING,
         allowNull: false
     }
+}, {
+    indexes: [{
+        unique: true,
+        fields: ['id_task']
+    }],
 })
 
 module.exports = List;
