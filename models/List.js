@@ -15,7 +15,7 @@ const List = database.define('list', {
 }, {
     indexes: [{
         unique: true,
-        fields: ['id_task']
+        fields: ['id_list']
     }],
 })
 
