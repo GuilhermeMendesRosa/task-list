@@ -23,6 +23,11 @@ const Task = database.define('task', {
         defaultValue: false,
         allowNull: false
     }
+}, {
+    indexes: [{
+        unique: true,
+        fields: ['id_task']
+    }],
 })
 
 Task.belongsTo(List, {
