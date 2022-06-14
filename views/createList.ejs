@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("partials/style")%>
+    <title>Criar Lista</title>
+</head>
+
+<body>
+    <form action="/" method="get">
+        <button class="btn d-flex justify-content-center align-items-center back-button">
+            <span class="material-symbols-outlined">
+                chevron_left
+            </span>
+        </button>
+    </form>
+    <div id="header" class="h1 d-flex justify-content-center align-items-center">
+        Criar Lista
+    </div>
+
+    <div class="container d-flex flex-column justify-content-center align-items-center">
+        <form action="/createlist" method="POST" class="campo d-flex flex-column justify-content-center align-items-center">
+            <h3>Nome</h3>
+            <input name="nome" type="text" id="campo-criarLista" required>
+            <input type="submit" class="btn btn-success m-3 p-2" value="Salvar">
+        </form> 
+    </div>
+</body>
+
+</html>

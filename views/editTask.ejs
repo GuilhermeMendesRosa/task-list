@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("partials/style")%>
+    <title><%=task.nome%></title>
+</head>
+
+<body>
+    <form action="/list/<%=id_list%>" method="get">
+        <button class="btn d-flex justify-content-center align-items-center back-button">
+            <span class="material-symbols-outlined">
+                chevron_left
+            </span>
+        </button>
+    </form>
+    <div id="header" class="h1 d-flex justify-content-center align-items-center">
+        Editar Tarefa
+    </div>
+
+    <div class="container d-flex flex-column justifyS-content-center align-items-center">
+        <form action="/edittask/<%=id_list%>/<%=task.id_task%>" method="post" class="campo d-flex flex-column justify-content-center align-items-center">
+            <h3>Nome</h3>
+            <input name="nome" type="text" class="campo" value="<%=task.nome%>" required>
+            <h3>Descrição</h3>
+            <textarea name="descricao" id="" cols="30" rows="10" class="campo"><%=task.descricao%></textarea>
+            <input type="submit" value="Salvar" class="btn btn-success m-3 p-2">
+        </form> 
+    </div>
+</body>
+
+</html>

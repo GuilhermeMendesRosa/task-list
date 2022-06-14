@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <%- include("partials/style")%>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=list.nome%></title>
+</head>
+
+<body>
+    <form action="/" method="get">
+        <button class="btn d-flex justify-content-center align-items-center back-button">
+            <span class="material-symbols-outlined">
+                chevron_left
+            </span>
+        </button>
+    </form>
+    <div id="header" class="h1 d-flex justify-content-center align-items-center">
+        <%=list.nome%>
+    </div>
+    <div class="container">
+        <form id="add" method="get" action="/createtask/<%=list.id_list%>">
+            <input type="submit" id="addButton" class="btn" value="Nova Tarefa"></input>
+        </form>
+        <div class="d-flex justify-content-center">
+
+            <div class="item">
+                <h2>Pendente</h2>
+                <% for( i=0; i < tasks.length; i++){%>
+                    <% if(!tasks[i].status) { %>
+                        <div class="card">
+                            <div class="card-header">
+                                <%=tasks[i].nome%>
+                            </div>
+                            <div class="card-body">
+                                <%=tasks[i].descricao%>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <form method="get" action="/status/<%=list.id_list%>/<%=tasks[i].id_task%>">
+                                    <button type="submit" class="btn btn-success m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            done
+                                        </span>
+                                    </button>
+                                </form>
+                                <form method="get" action="/edittask/<%=list.id_list%>/<%=tasks[i].id_task%>">
+                                    <button type="submit" class="btn btn-info m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            edit
+                                        </span>
+                                    </button>
+                                </form>
+                                <form method="POST"
+                                    action="/deletetask/<%=list.id_list%>/<%=tasks[i].id_task%>?_method=DELETE">
+                                    <button type="submit" class="btn btn-danger m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            delete
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <%}%>
+                            <%}%>
+            </div>
+            <div class="item">
+                <h2>Concluído</h2>
+                <% for( i=0; i < tasks.length; i++){%>
+                    <% if(tasks[i].status) { %>
+                        <div class="card">
+                            <div class="card-header">
+                                <%=tasks[i].nome%>
+                            </div>
+                            <div class="card-body">
+                                <%=tasks[i].descricao%>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <form method="get" action="/status/<%=list.id_list%>/<%=tasks[i].id_task%>">
+                                    <button type="submit" class="btn btn-secondary m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            arrow_back
+                                        </span>
+                                    </button>
+                                </form>
+                                <form method="get" action="/edittask/<%=list.id_list%>/<%=tasks[i].id_task%>">
+                                    <button type="submit" class="btn btn-info m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            edit
+                                        </span>
+                                    </button>
+                                </form>
+                                <form method="POST"
+                                    action="/deletetask/<%=list.id_list%>/<%=tasks[i].id_task%>?_method=DELETE">
+                                    <button type="submit" class="btn btn-danger m-1">
+                                        <span class="material-symbols-outlined d-flex">
+                                            delete
+                                        </span>
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <%}%>
+                            <%}%>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
