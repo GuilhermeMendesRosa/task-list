@@ -7,7 +7,9 @@ const Task = database.define('task', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true, 
+        unique: true,
+        fields: ['id_task']
     },
     nome: {
         type: Sequelize.STRING,
