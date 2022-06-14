@@ -39,7 +39,6 @@ const getChangeStatus = async (req, res) => {
 }
 
 
-
 const postCreateList = async (req, res) => {
     const novaLista = await List.create({nome: req.body.nome})
     novaLista instanceof List
