@@ -1,7 +1,5 @@
 # task-list
 
-testando a mudança de branch
-
 <h3>
 Projeto de Lista de tarefas onde o usuário pode cria-las atreladas à listas específicas. Utilizado no front end HTML e CSS com ejs e bootstrap, back end feito com Node.js e banco de dados PostgreSQL.    
 </h3>
