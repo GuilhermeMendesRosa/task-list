@@ -1,5 +1,5 @@
 const Sequelize = require("sequelize")
-const sequelize = new Sequelize('task-list', 'postgres', 'postgres', {
+const sequelize = new Sequelize('task-list', 'postgres', 'SUA-SENHA', {
     dialect: 'postgresql',
     host: 'localhost',
     port: 5432
